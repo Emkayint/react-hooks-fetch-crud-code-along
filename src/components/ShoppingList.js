@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ItemForm from "./ItemForm";
 import Filter from "./Filter";
 import Item from "./Item";
@@ -7,6 +7,11 @@ function ShoppingList() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [items, setItems] = useState([]);
 
+  useEffect(() => {
+    fetch("http://localhost:3000/items")
+    .then(res => res.json())
+    .then(res => setItems(res))
+  }, [])
   function handleCategoryChange(category) {
     setSelectedCategory(category);
   }
