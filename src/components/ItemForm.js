@@ -13,10 +13,11 @@ function ItemForm({ onAddItem}) {
       isInCart : false,
     }
 
-    fetch("http://localhost:4000/items", {
+    fetch("http://localhost:3000/items", {
       method : "POST",
       headers : {
-        "Content-Type" : "application/json"
+        "Content-Type" : "application/json",
+        Accept : "application/json"
       },
       body : JSON.stringify(itemData)
     })
