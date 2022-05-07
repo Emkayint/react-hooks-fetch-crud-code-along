@@ -16,6 +16,8 @@ function ShoppingList() {
     setSelectedCategory(category);
   }
 
+  function handleUpd
+
   const itemsToDisplay = items.filter((item) => {
     if (selectedCategory === "All") return true;
 
